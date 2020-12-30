@@ -42,6 +42,8 @@ namespace Student_Management_System_By_Mehboob
             this.btsave = new System.Windows.Forms.Button();
             this.btcancel = new System.Windows.Forms.Button();
             this.btreset = new System.Windows.Forms.Button();
+            this.eruname = new System.Windows.Forms.Label();
+            this.erpass = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtemail
@@ -188,12 +190,32 @@ namespace Student_Management_System_By_Mehboob
             this.btreset.Visible = false;
             this.btreset.Click += new System.EventHandler(this.btreset_Click);
             // 
+            // eruname
+            // 
+            this.eruname.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.eruname.Location = new System.Drawing.Point(423, 166);
+            this.eruname.Name = "eruname";
+            this.eruname.Size = new System.Drawing.Size(16, 23);
+            this.eruname.TabIndex = 17;
+            this.eruname.Visible = false;
+            // 
+            // erpass
+            // 
+            this.erpass.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.erpass.Location = new System.Drawing.Point(421, 221);
+            this.erpass.Name = "erpass";
+            this.erpass.Size = new System.Drawing.Size(16, 23);
+            this.erpass.TabIndex = 18;
+            this.erpass.Visible = false;
+            // 
             // forgetpassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(540, 275);
+            this.Controls.Add(this.erpass);
+            this.Controls.Add(this.eruname);
             this.Controls.Add(this.btreset);
             this.Controls.Add(this.btcancel);
             this.Controls.Add(this.btsave);
@@ -233,5 +255,7 @@ namespace Student_Management_System_By_Mehboob
         private System.Windows.Forms.Button btsave;
         private System.Windows.Forms.Button btcancel;
         private System.Windows.Forms.Button btreset;
+        private System.Windows.Forms.Label eruname;
+        private System.Windows.Forms.Label erpass;
     }
 }

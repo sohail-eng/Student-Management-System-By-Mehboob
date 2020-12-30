@@ -36,6 +36,8 @@ namespace Student_Management_System_By_Mehboob
             this.login = new System.Windows.Forms.Button();
             this.signup = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.erorname = new System.Windows.Forms.Label();
+            this.errorpass = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -114,12 +116,32 @@ namespace Student_Management_System_By_Mehboob
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // erorname
+            // 
+            this.erorname.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.erorname.Location = new System.Drawing.Point(408, 74);
+            this.erorname.Name = "erorname";
+            this.erorname.Size = new System.Drawing.Size(36, 29);
+            this.erorname.TabIndex = 10;
+            this.erorname.Visible = false;
+            // 
+            // errorpass
+            // 
+            this.errorpass.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.errorpass.Location = new System.Drawing.Point(408, 113);
+            this.errorpass.Name = "errorpass";
+            this.errorpass.Size = new System.Drawing.Size(36, 29);
+            this.errorpass.TabIndex = 11;
+            this.errorpass.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(540, 287);
+            this.Controls.Add(this.errorpass);
+            this.Controls.Add(this.erorname);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.signup);
             this.Controls.Add(this.login);
@@ -146,6 +168,8 @@ namespace Student_Management_System_By_Mehboob
         private System.Windows.Forms.Button login;
         private System.Windows.Forms.Button signup;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label erorname;
+        private System.Windows.Forms.Label errorpass;
     }
 }
 

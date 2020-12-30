@@ -38,6 +38,8 @@ namespace Student_Management_System_By_Mehboob
 
         private void login_Click(object sender, EventArgs e)
         {
+            erorname.Visible = false;
+            errorpass.Visible = false ;
             ArrayList list = new ArrayList();
             list = myData.getAdminData();
             for(int i=0;i<list.Count;i++)
@@ -51,11 +53,13 @@ namespace Student_Management_System_By_Mehboob
                     }
                     else
                     {
+                        errorpass.Visible = true;
                         MessageBox.Show("Wrong Password !!!");
                         return;
                     }
                 }
             }
+            erorname.Visible = true;
             MessageBox.Show("Please Select User Name  !!!");
             return;
         }

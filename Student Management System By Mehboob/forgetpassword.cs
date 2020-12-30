@@ -89,6 +89,42 @@ namespace Student_Management_System_By_Mehboob
 
         private void btsave_Click(object sender, EventArgs e)
         {
+            eruname.Visible = false;
+            erpass.Visible = false;
+            if(txtusername.Text==String.Empty)
+            {
+                eruname.Visible = true;
+                return;
+            }
+            if(txtpassword.Text==String.Empty)
+            {
+                erpass.Visible = true;
+                return;
+            }
+            ArrayList list = new ArrayList();
+            list = myData.getAdminData();
+            for(int i=0;i<list.Count;i++)
+            {
+                if(((adminClass)list[i]).name.Equals(txtusername.Text))
+                {
+                    if(!(lblusername.Text.Equals(txtusername.Text)))
+                    {
+                        MessageBox.Show("User Name Already Available !!!");
+                        eruname.Visible = true;
+                        return;
+                    }
+                }
+                if(((adminClass)list[i]).pass.Equals(txtpassword.Text))
+                {
+                    if(!(lblpass.Text.Equals(txtpassword.Text)))
+                    {
+                        MessageBox.Show("Weak Password !!!");
+                        erpass.Visible = true;
+                        return;
+                    }
+                }
+
+            }
             myData.updateAdminData(txtusername.Text, txtemail.Text, txtpassword.Text);
             lblusername.Text = txtusername.Text;
             lblpass.Text = txtpassword.Text;
