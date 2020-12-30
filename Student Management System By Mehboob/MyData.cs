@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Collections;
+using System.Windows.Forms;
 
 namespace Student_Management_System_By_Mehboob
 {
@@ -15,7 +16,7 @@ namespace Student_Management_System_By_Mehboob
         String query;
         public MyData()
         {
-            String conString = "";
+            String conString = @"Data Source=SOHAIL-AMJAD-LA\MSSQLSERVER1;Initial Catalog=StudentManagementSystem_Mehboob;Integrated Security=True";
             query = "";
             con = new SqlConnection(conString);
         }
@@ -25,9 +26,9 @@ namespace Student_Management_System_By_Mehboob
             return executeQuery("insert into [admin] ([name],[email],[password]) values ('" + name + "','" + email + "','" + pass + "')");
         }
 
-        public Boolean updateAdminData(String email,String pass)
+        public Boolean updateAdminData(String name,String email,String pass)
         {
-            return executeQuery("update [admin] set [password]='" + pass + "' where [email]='" + email + "'");
+            return executeQuery("update [admin] set [name]='"+name+"',[password]='"+pass+"' where [email]='"+email+"'");
         }
 
         public Boolean removeAdminData(String email)
