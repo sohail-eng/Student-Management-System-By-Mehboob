@@ -153,7 +153,7 @@ namespace Student_Management_System_By_Mehboob
             this.MinimumSize = new System.Drawing.Size(556, 326);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Log In";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

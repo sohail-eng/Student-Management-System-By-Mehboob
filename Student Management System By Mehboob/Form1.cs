@@ -49,6 +49,11 @@ namespace Student_Management_System_By_Mehboob
                     if(((adminClass)list[i]).pass.Equals(txtpass.Text))
                     {
                         MessageBox.Show("Login Successfully !!!");
+                        this.loadData();
+                        txtpass.Text = "";
+                        DashBoard d = new DashBoard(this,((adminClass)list[i]).name);
+                        this.Hide();
+                        d.Show();
                         return;
                     }
                     else
