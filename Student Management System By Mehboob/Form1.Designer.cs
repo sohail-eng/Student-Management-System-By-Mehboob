@@ -36,8 +36,8 @@ namespace Student_Management_System_By_Mehboob
             this.login = new System.Windows.Forms.Button();
             this.signup = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.erorname = new System.Windows.Forms.Label();
             this.errorpass = new System.Windows.Forms.Label();
+            this.erorname = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -102,6 +102,7 @@ namespace Student_Management_System_By_Mehboob
             this.signup.TabIndex = 8;
             this.signup.Text = "Sign up";
             this.signup.UseVisualStyleBackColor = false;
+            this.signup.Click += new System.EventHandler(this.signup_Click);
             // 
             // button1
             // 
@@ -116,15 +117,6 @@ namespace Student_Management_System_By_Mehboob
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // erorname
-            // 
-            this.erorname.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
-            this.erorname.Location = new System.Drawing.Point(408, 74);
-            this.erorname.Name = "erorname";
-            this.erorname.Size = new System.Drawing.Size(36, 29);
-            this.erorname.TabIndex = 10;
-            this.erorname.Visible = false;
-            // 
             // errorpass
             // 
             this.errorpass.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
@@ -133,6 +125,15 @@ namespace Student_Management_System_By_Mehboob
             this.errorpass.Size = new System.Drawing.Size(36, 29);
             this.errorpass.TabIndex = 11;
             this.errorpass.Visible = false;
+            // 
+            // erorname
+            // 
+            this.erorname.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.erorname.Location = new System.Drawing.Point(408, 74);
+            this.erorname.Name = "erorname";
+            this.erorname.Size = new System.Drawing.Size(36, 29);
+            this.erorname.TabIndex = 10;
+            this.erorname.Visible = false;
             // 
             // Form1
             // 

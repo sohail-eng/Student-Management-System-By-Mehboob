@@ -70,5 +70,12 @@ namespace Student_Management_System_By_Mehboob
             this.Hide();
             f.Show();
         }
+
+        private void signup_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProductKey p = new ProductKey(this);
+            p.Show();
+        }
     }
 }
