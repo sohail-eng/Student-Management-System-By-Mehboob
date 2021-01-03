@@ -162,5 +162,72 @@ namespace Student_Management_System_By_Mehboob
             dataGridViewStudent.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewStudent.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btadd_Click(object sender, EventArgs e)
+        {
+            Boolean b = false;
+            lblinfo.Visible = false;
+            ername.Visible = false;
+            eremail.Visible = false;
+            if(txtname.Text==String.Empty)
+            {
+                ername.Visible = true;
+                lblinfo.Text = "Data Error !!!";
+                lblinfo.Visible = true;
+                b = true;
+            }
+            if(txtemail.Text==String.Empty)
+            {
+                eremail.Visible = true;
+                lblinfo.Text = "Data Error !!!";
+                lblinfo.Visible = true;
+                b = true;
+            }
+            if(b)
+            {
+                return;
+            }
+
+            ArrayList list = new ArrayList();
+            list = myData.getTeacherData();
+            for(int i=0;i<list.Count;i++)
+            {
+                if(((teacherClass)list[i]).name.ToLower().Equals(txtname.Text.ToLower()))
+                {
+                    lblinfo.Text = "Teacher Name Already Exist !!!";
+                    lblinfo.Visible = true;
+                    ername.Visible = true;
+                    return;
+                }
+                if(((teacherClass)list[i]).email.Equals(txtemail.Text))
+                {
+                    lblinfo.Text = "Email Already Registered !!!";
+                    lblinfo.Visible = true;
+                    eremail.Visible = true;
+                    return;
+                }
+            }
+
+            if(!(myData.insertTeacherData(txtname.Text,txtemail.Text)))
+            {
+                lblinfo.Text = "System Error !!!";
+                lblinfo.Visible = true;
+                return;
+            }
+            else
+            {
+                lblinfo.Text = "Data Added SuccessFully !!!";
+                lblinfo.Visible = true;
+                txtname.Text = "";
+                txtemail.Text = "";
+                showteacher();
+            }
+
+        }
     }
 }

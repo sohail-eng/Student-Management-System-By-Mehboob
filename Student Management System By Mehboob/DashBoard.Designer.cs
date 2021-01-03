@@ -52,12 +52,21 @@ namespace Student_Management_System_By_Mehboob
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.dataGridViewStudent = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.txtemail = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblinfo = new System.Windows.Forms.Label();
+            this.btadd = new System.Windows.Forms.Button();
+            this.ername = new System.Windows.Forms.Label();
+            this.eremail = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacher)).BeginInit();
             this.tabControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubject)).BeginInit();
@@ -158,12 +167,21 @@ namespace Student_Management_System_By_Mehboob
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tabPage5.Controls.Add(this.eremail);
+            this.tabPage5.Controls.Add(this.ername);
+            this.tabPage5.Controls.Add(this.btadd);
+            this.tabPage5.Controls.Add(this.lblinfo);
+            this.tabPage5.Controls.Add(this.label3);
+            this.tabPage5.Controls.Add(this.txtemail);
+            this.tabPage5.Controls.Add(this.txtname);
+            this.tabPage5.Controls.Add(this.label2);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(665, 122);
             this.tabPage5.TabIndex = 0;
-            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.Text = "Add Teacher";
+            this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
             // tabPage6
             // 
@@ -177,6 +195,8 @@ namespace Student_Management_System_By_Mehboob
             // 
             // dataGridViewTeacher
             // 
+            this.dataGridViewTeacher.AllowUserToAddRows = false;
+            this.dataGridViewTeacher.AllowUserToDeleteRows = false;
             this.dataGridViewTeacher.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(180)))));
             this.dataGridViewTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTeacher.Location = new System.Drawing.Point(17, 171);
@@ -216,6 +236,8 @@ namespace Student_Management_System_By_Mehboob
             // 
             // dataGridViewSubject
             // 
+            this.dataGridViewSubject.AllowUserToAddRows = false;
+            this.dataGridViewSubject.AllowUserToDeleteRows = false;
             this.dataGridViewSubject.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(180)))));
             this.dataGridViewSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSubject.Location = new System.Drawing.Point(17, 171);
@@ -255,6 +277,8 @@ namespace Student_Management_System_By_Mehboob
             // 
             // dataGridViewClass
             // 
+            this.dataGridViewClass.AllowUserToAddRows = false;
+            this.dataGridViewClass.AllowUserToDeleteRows = false;
             this.dataGridViewClass.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(180)))));
             this.dataGridViewClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClass.Location = new System.Drawing.Point(17, 171);
@@ -303,6 +327,83 @@ namespace Student_Management_System_By_Mehboob
             this.dataGridViewStudent.Size = new System.Drawing.Size(673, 209);
             this.dataGridViewStudent.TabIndex = 2;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(29, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Name";
+            // 
+            // txtname
+            // 
+            this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtname.Location = new System.Drawing.Point(138, 33);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(177, 24);
+            this.txtname.TabIndex = 1;
+            // 
+            // txtemail
+            // 
+            this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtemail.Location = new System.Drawing.Point(138, 70);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(177, 24);
+            this.txtemail.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(29, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 18);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "E-Mail";
+            // 
+            // lblinfo
+            // 
+            this.lblinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblinfo.Location = new System.Drawing.Point(474, 22);
+            this.lblinfo.Name = "lblinfo";
+            this.lblinfo.Size = new System.Drawing.Size(174, 82);
+            this.lblinfo.TabIndex = 4;
+            this.lblinfo.Text = "Information";
+            this.lblinfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblinfo.Visible = false;
+            // 
+            // btadd
+            // 
+            this.btadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btadd.Location = new System.Drawing.Point(354, 40);
+            this.btadd.Name = "btadd";
+            this.btadd.Size = new System.Drawing.Size(85, 43);
+            this.btadd.TabIndex = 5;
+            this.btadd.Text = "Add";
+            this.btadd.UseVisualStyleBackColor = false;
+            this.btadd.Click += new System.EventHandler(this.btadd_Click);
+            // 
+            // ername
+            // 
+            this.ername.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.ername.Location = new System.Drawing.Point(321, 34);
+            this.ername.Name = "ername";
+            this.ername.Size = new System.Drawing.Size(15, 23);
+            this.ername.TabIndex = 6;
+            this.ername.Visible = false;
+            // 
+            // eremail
+            // 
+            this.eremail.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.eremail.Location = new System.Drawing.Point(321, 71);
+            this.eremail.Name = "eremail";
+            this.eremail.Size = new System.Drawing.Size(15, 23);
+            this.eremail.TabIndex = 7;
+            this.eremail.Visible = false;
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,6 +425,8 @@ namespace Student_Management_System_By_Mehboob
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacher)).EndInit();
             this.tabControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubject)).EndInit();
@@ -360,5 +463,13 @@ namespace Student_Management_System_By_Mehboob
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.DataGridView dataGridViewSubject;
+        private System.Windows.Forms.Label lblinfo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtemail;
+        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label eremail;
+        private System.Windows.Forms.Label ername;
+        private System.Windows.Forms.Button btadd;
     }
 }
