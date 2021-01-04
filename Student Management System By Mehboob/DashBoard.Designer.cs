@@ -234,7 +234,7 @@ namespace Student_Management_System_By_Mehboob
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage9.Size = new System.Drawing.Size(665, 122);
             this.tabPage9.TabIndex = 0;
-            this.tabPage9.Text = "tabPage9";
+            this.tabPage9.Text = "Add Class";
             // 
             // lblinfoclassadd
             // 
