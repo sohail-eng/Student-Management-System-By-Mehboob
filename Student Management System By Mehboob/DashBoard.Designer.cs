@@ -60,6 +60,14 @@ namespace Student_Management_System_By_Mehboob
             this.btadd = new System.Windows.Forms.Button();
             this.ername = new System.Windows.Forms.Label();
             this.eremail = new System.Windows.Forms.Label();
+            this.ertsnamesbadd = new System.Windows.Forms.Label();
+            this.ernamesbadd = new System.Windows.Forms.Label();
+            this.btsbadd = new System.Windows.Forms.Button();
+            this.lblinfosbadd = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtsbnameadd = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtsbtsnameadd = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -69,6 +77,7 @@ namespace Student_Management_System_By_Mehboob
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacher)).BeginInit();
             this.tabControl3.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubject)).BeginInit();
             this.tabControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClass)).BeginInit();
@@ -217,12 +226,20 @@ namespace Student_Management_System_By_Mehboob
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tabPage7.Controls.Add(this.txtsbtsnameadd);
+            this.tabPage7.Controls.Add(this.ertsnamesbadd);
+            this.tabPage7.Controls.Add(this.ernamesbadd);
+            this.tabPage7.Controls.Add(this.btsbadd);
+            this.tabPage7.Controls.Add(this.lblinfosbadd);
+            this.tabPage7.Controls.Add(this.label7);
+            this.tabPage7.Controls.Add(this.txtsbnameadd);
+            this.tabPage7.Controls.Add(this.label8);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(665, 122);
             this.tabPage7.TabIndex = 0;
-            this.tabPage7.Text = "tabPage7";
+            this.tabPage7.Text = "Add Subject";
             // 
             // tabPage8
             // 
@@ -404,6 +421,85 @@ namespace Student_Management_System_By_Mehboob
             this.eremail.TabIndex = 7;
             this.eremail.Visible = false;
             // 
+            // ertsnamesbadd
+            // 
+            this.ertsnamesbadd.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.ertsnamesbadd.Location = new System.Drawing.Point(318, 70);
+            this.ertsnamesbadd.Name = "ertsnamesbadd";
+            this.ertsnamesbadd.Size = new System.Drawing.Size(15, 23);
+            this.ertsnamesbadd.TabIndex = 15;
+            this.ertsnamesbadd.Visible = false;
+            // 
+            // ernamesbadd
+            // 
+            this.ernamesbadd.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.ernamesbadd.Location = new System.Drawing.Point(318, 33);
+            this.ernamesbadd.Name = "ernamesbadd";
+            this.ernamesbadd.Size = new System.Drawing.Size(15, 23);
+            this.ernamesbadd.TabIndex = 14;
+            this.ernamesbadd.Visible = false;
+            // 
+            // btsbadd
+            // 
+            this.btsbadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btsbadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btsbadd.Location = new System.Drawing.Point(351, 39);
+            this.btsbadd.Name = "btsbadd";
+            this.btsbadd.Size = new System.Drawing.Size(85, 43);
+            this.btsbadd.TabIndex = 13;
+            this.btsbadd.Text = "Add";
+            this.btsbadd.UseVisualStyleBackColor = false;
+            this.btsbadd.Click += new System.EventHandler(this.btsbadd_Click);
+            // 
+            // lblinfosbadd
+            // 
+            this.lblinfosbadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblinfosbadd.Location = new System.Drawing.Point(471, 21);
+            this.lblinfosbadd.Name = "lblinfosbadd";
+            this.lblinfosbadd.Size = new System.Drawing.Size(174, 82);
+            this.lblinfosbadd.TabIndex = 12;
+            this.lblinfosbadd.Text = "Information";
+            this.lblinfosbadd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblinfosbadd.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(10, 72);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 18);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Choose Teacher";
+            // 
+            // txtsbnameadd
+            // 
+            this.txtsbnameadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsbnameadd.Location = new System.Drawing.Point(135, 32);
+            this.txtsbnameadd.Name = "txtsbnameadd";
+            this.txtsbnameadd.Size = new System.Drawing.Size(177, 24);
+            this.txtsbnameadd.TabIndex = 9;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(26, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 18);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Name";
+            // 
+            // txtsbtsnameadd
+            // 
+            this.txtsbtsnameadd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtsbtsnameadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsbtsnameadd.FormattingEnabled = true;
+            this.txtsbtsnameadd.Location = new System.Drawing.Point(135, 67);
+            this.txtsbtsnameadd.Name = "txtsbtsnameadd";
+            this.txtsbtsnameadd.Size = new System.Drawing.Size(177, 26);
+            this.txtsbtsnameadd.TabIndex = 16;
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,6 +525,8 @@ namespace Student_Management_System_By_Mehboob
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacher)).EndInit();
             this.tabControl3.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubject)).EndInit();
             this.tabControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClass)).EndInit();
@@ -471,5 +569,13 @@ namespace Student_Management_System_By_Mehboob
         private System.Windows.Forms.Label eremail;
         private System.Windows.Forms.Label ername;
         private System.Windows.Forms.Button btadd;
+        private System.Windows.Forms.ComboBox txtsbtsnameadd;
+        private System.Windows.Forms.Label ertsnamesbadd;
+        private System.Windows.Forms.Label ernamesbadd;
+        private System.Windows.Forms.Button btsbadd;
+        private System.Windows.Forms.Label lblinfosbadd;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtsbnameadd;
+        private System.Windows.Forms.Label label8;
     }
 }

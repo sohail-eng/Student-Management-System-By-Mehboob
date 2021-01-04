@@ -43,6 +43,18 @@ namespace Student_Management_System_By_Mehboob
             ArrayList list = new ArrayList();
             list = myData.getTeacherData();
             showTeacherData(list);
+            showsubjectlist();
+        }
+
+        private void showsubjectlist()
+        {
+            ArrayList list = new ArrayList();
+            list = myData.getTeacherData();
+            txtsbtsnameadd.Items.Clear();
+            for (int i = 0; i < list.Count; i++)
+            {
+                txtsbtsnameadd.Items.Add(((teacherClass)list[i]).name);
+            }
         }
 
         private void showsubject()
@@ -84,6 +96,7 @@ namespace Student_Management_System_By_Mehboob
             dataGridViewTeacher.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewTeacher.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewTeacher.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTeacher.Columns[1].DefaultCellStyle.BackColor = Color.FromArgb(0, 190, 120);
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
@@ -109,6 +122,7 @@ namespace Student_Management_System_By_Mehboob
             dataGridViewSubject.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewSubject.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewSubject.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewSubject.Columns[1].DefaultCellStyle.BackColor = Color.FromArgb(0, 190, 120);
         }
 
         private void showClassData(ArrayList list)
@@ -137,6 +151,7 @@ namespace Student_Management_System_By_Mehboob
             dataGridViewClass.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewClass.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewClass.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewClass.Columns[1].DefaultCellStyle.BackColor = Color.FromArgb(0, 190, 120);
         }
 
         private void showStudentData(ArrayList list)
@@ -161,6 +176,7 @@ namespace Student_Management_System_By_Mehboob
             dataGridViewStudent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewStudent.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewStudent.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewStudent.Columns[1].DefaultCellStyle.BackColor = Color.FromArgb(0, 190, 120);
         }
 
         private void tabPage5_Click(object sender, EventArgs e)
@@ -228,6 +244,57 @@ namespace Student_Management_System_By_Mehboob
                 showteacher();
             }
 
+        }
+
+        private void btsbadd_Click(object sender, EventArgs e)
+        {
+            Boolean b =
+            ernamesbadd.Visible =
+                ertsnamesbadd.Visible =
+                lblinfosbadd.Visible = false;
+            if (txtsbnameadd.Text == String.Empty)
+            {
+                lblinfosbadd.Text = "Data Error !!!";
+                lblinfosbadd.Visible =
+                    ernamesbadd.Visible =
+                    b = true;
+            }
+            if(txtsbtsnameadd.Text==String.Empty)
+            {
+                lblinfosbadd.Text = "Data Error !!!";
+                lblinfosbadd.Visible =
+                    ertsnamesbadd.Visible =
+                    b = true;
+            }
+            if(b)
+            {
+                return;
+            }
+            ArrayList list = new ArrayList();
+            list = myData.getSubjectData();
+            for(int i=0;i<list.Count;i++)
+            {
+                if(((subjectClass)list[i]).name.ToLower().Equals(txtsbnameadd.Text.ToLower()))
+                {
+                    lblinfosbadd.Text = "Subject Already Registered !!!";
+                    lblinfosbadd.Visible =
+                        ernamesbadd.Visible = true;
+                    return;
+                }
+            }
+            if(!(myData.insertSubjectData(txtsbnameadd.Text,txtsbtsnameadd.Text)))
+            {
+                lblinfosbadd.Text = "System Error !!!";
+                lblinfosbadd.Visible = true;
+            }
+            else
+            {
+                lblinfosbadd.Text = "Data Added Successfully !!!";
+                lblinfosbadd.Visible = true;
+                txtsbnameadd.Text = "";
+                showsubjectlist();
+                showsubject();
+            }
         }
     }
 }
