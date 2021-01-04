@@ -43,10 +43,10 @@ namespace Student_Management_System_By_Mehboob
             ArrayList list = new ArrayList();
             list = myData.getTeacherData();
             showTeacherData(list);
-            showsubjectlist();
+            showteacherlist();
         }
 
-        private void showsubjectlist()
+        private void showteacherlist()
         {
             ArrayList list = new ArrayList();
             list = myData.getTeacherData();
@@ -62,6 +62,26 @@ namespace Student_Management_System_By_Mehboob
             ArrayList list = new ArrayList();
             list = myData.getSubjectData();
             showSubjectData(list);
+            showsubjectlist();
+        }
+
+        private void showsubjectlist()
+        {
+            ArrayList list = new ArrayList();
+            list = myData.getSubjectData();
+            txtclasssb1add.Items.Clear();
+            txtclasssb2add.Items.Clear();
+            txtclasssb3add.Items.Clear();
+            txtclasssb4add.Items.Clear();
+            txtclasssb5add.Items.Clear();
+            for (int i = 0; i < list.Count; i++)
+            {
+                txtclasssb1add.Items.Add(((subjectClass)list[i]).name);
+                txtclasssb2add.Items.Add(((subjectClass)list[i]).name);
+                txtclasssb3add.Items.Add(((subjectClass)list[i]).name);
+                txtclasssb4add.Items.Add(((subjectClass)list[i]).name);
+                txtclasssb5add.Items.Add(((subjectClass)list[i]).name);
+            }
         }
 
         private void showClass()
@@ -292,8 +312,185 @@ namespace Student_Management_System_By_Mehboob
                 lblinfosbadd.Text = "Data Added Successfully !!!";
                 lblinfosbadd.Visible = true;
                 txtsbnameadd.Text = "";
-                showsubjectlist();
+                showteacherlist();
                 showsubject();
+            }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtclasssb1add_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String name = txtclasssb1add.Text;
+            txtclasssb1add.Enabled = false;
+            if(txtclasssb2add.Enabled)
+            {
+                txtclasssb2add.Items.Remove(name);
+            }
+            if(txtclasssb3add.Enabled)
+            {
+                txtclasssb3add.Items.Remove(name);
+            }
+            if(txtclasssb4add.Enabled)
+            {
+                txtclasssb4add.Items.Remove(name);
+            }
+            if(txtclasssb5add.Enabled)
+            {
+                txtclasssb5add.Items.Remove(name);
+            }
+        }
+
+        private void txtclasssb2add_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String name = txtclasssb2add.Text;
+            txtclasssb2add.Enabled = false;
+            if (txtclasssb1add.Enabled)
+            {
+                txtclasssb1add.Items.Remove(name);
+            }
+            if (txtclasssb3add.Enabled)
+            {
+                txtclasssb3add.Items.Remove(name);
+            }
+            if (txtclasssb4add.Enabled)
+            {
+                txtclasssb4add.Items.Remove(name);
+            }
+            if (txtclasssb5add.Enabled)
+            {
+                txtclasssb5add.Items.Remove(name);
+            }
+        }
+
+        private void txtclasssb3add_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String name = txtclasssb3add.Text;
+            txtclasssb3add.Enabled = false;
+            if (txtclasssb1add.Enabled)
+            {
+                txtclasssb1add.Items.Remove(name);
+            }
+            if (txtclasssb2add.Enabled)
+            {
+                txtclasssb2add.Items.Remove(name);
+            }
+            if (txtclasssb4add.Enabled)
+            {
+                txtclasssb4add.Items.Remove(name);
+            }
+            if (txtclasssb5add.Enabled)
+            {
+                txtclasssb5add.Items.Remove(name);
+            }
+        }
+
+        private void txtclasssb4add_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String name = txtclasssb4add.Text;
+            txtclasssb4add.Enabled = false;
+            if (txtclasssb1add.Enabled)
+            {
+                txtclasssb1add.Items.Remove(name);
+            }
+            if (txtclasssb2add.Enabled)
+            {
+                txtclasssb2add.Items.Remove(name);
+            }
+            if (txtclasssb3add.Enabled)
+            {
+                txtclasssb3add.Items.Remove(name);
+            }
+            if (txtclasssb5add.Enabled)
+            {
+                txtclasssb5add.Items.Remove(name);
+            }
+        }
+
+        private void txtclasssb5add_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String name = txtclasssb5add.Text;
+            txtclasssb5add.Enabled = false;
+            if (txtclasssb1add.Enabled)
+            {
+                txtclasssb1add.Items.Remove(name);
+            }
+            if (txtclasssb2add.Enabled)
+            {
+                txtclasssb2add.Items.Remove(name);
+            }
+            if (txtclasssb3add.Enabled)
+            {
+                txtclasssb3add.Items.Remove(name);
+            }
+            if (txtclasssb4add.Enabled)
+            {
+                txtclasssb4add.Items.Remove(name);
+            }
+        }
+
+        private void btrefresh_Click(object sender, EventArgs e)
+        {
+            txtclasssb1add.Enabled =
+                txtclasssb2add.Enabled =
+                txtclasssb3add.Enabled =
+                txtclasssb4add.Enabled =
+                txtclasssb5add.Enabled = true;
+            showsubjectlist();
+        }
+
+        private void btclassadd_Click(object sender, EventArgs e)
+        {
+            Boolean b = false;
+            lblinfoclassadd.Visible =
+                erclassnameadd.Visible =
+                erclasssbadd.Visible = false;
+            if(txtclassnameadd.Text==String.Empty)
+            {
+                lblinfoclassadd.Text = "Please Enter Class Name !!!";
+                lblinfoclassadd.Visible = true;
+                erclassnameadd.Visible = true;
+                return;
+            }
+            if(txtclasssb1add.Text==String.Empty&&
+                txtclasssb2add.Text==String.Empty&&
+                txtclasssb3add.Text==String.Empty&&
+                txtclasssb4add.Text==String.Empty&&
+                txtclasssb5add.Text==String.Empty
+                )
+            {
+                lblinfoclassadd.Text = "Please Choose At least 1 Subject !!!";
+                lblinfoclassadd.Visible = true;
+                erclasssbadd.Visible = true;
+                return;
+            }
+            ArrayList list = new ArrayList();
+            list = myData.getClassData();
+            for(int i=0;i<list.Count;i++)
+            {
+                if(((classClass)list[i]).name.ToLower().Equals(txtclassnameadd.Text.ToLower()))
+                {
+                    lblinfoclassadd.Text = "Class Already Exist !!!";
+                    lblinfoclassadd.Visible = true;
+                    return;
+                }
+            }
+            if(!(myData.insertClassData(txtclassnameadd.Text,txtclasssb1add.Text,txtclasssb2add.Text,txtclasssb3add.Text,txtclasssb4add.Text,txtclasssb5add.Text)))
+            {
+                lblinfoclassadd.Text = "System Error !!!";
+                lblinfoclassadd.Visible = true;
+                return;
+            }
+            else
+            {
+                lblinfoclassadd.Text = "Data Added Successfully !!!";
+                lblinfoclassadd.Visible = true;
+                txtclassnameadd.Text = "";
+                showsubjectlist();
+                showClass();
             }
         }
     }
