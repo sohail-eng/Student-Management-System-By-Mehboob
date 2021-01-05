@@ -265,9 +265,19 @@ namespace Student_Management_System_By_Mehboob
             return executeQuery("update [class] set [subject5]='" + newname + "' where [subject5]='" + oldname + "'");
         }
 
+        public Boolean updateclass(String id,String name,String sb1,String sb2,String sb3,String sb4,String sb5)
+        {
+            return executeQuery("update [class] set [name]='" + name + "', [subject1]='" + sb1 + "' , [subject2]='" + sb2 + "', [subject3]='" + sb3 + "',[subject4]='" + sb4 + "',[subject5]='" + sb5 + "' where [id]='" + id + "'");
+        }
+
         public Boolean removeClassData(String name)
         {
             return executeQuery("delete from [class] where [name]='" + name + "'");
+        }
+
+        public Boolean removeClass(String id)
+        {
+            return executeQuery("delete from [class] where [id]='"+id+"'");
         }
 
         public ArrayList getClassData()
@@ -315,6 +325,11 @@ namespace Student_Management_System_By_Mehboob
         public Boolean updateStudentEmail(String name,String fname,String email)
         {
             return executeQuery("update [student] set [email]='" + email + "' where [name]='" + name + "' and [Father Name]='" + fname + "'");
+        }
+
+        public Boolean updateStudentclass(String oldname,String newname)
+        {
+            return executeQuery("update [student] set [class Name]='" + newname + "' where [class Name]='" + oldname + "'");
         }
 
         public Boolean removeStudentData(String email)
