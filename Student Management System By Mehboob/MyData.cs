@@ -332,9 +332,19 @@ namespace Student_Management_System_By_Mehboob
             return executeQuery("update [student] set [class Name]='" + newname + "' where [class Name]='" + oldname + "'");
         }
 
+        public Boolean updateStudent(String id,String name,String fname,String email,String cname)
+        {
+            return executeQuery("update [student] set [name]='" + name + "',[Father Name]='" + fname + "',[email]='" + email + "',[class Name]='" + cname + "' where [id]='" + id + "'");
+        }
+
         public Boolean removeStudentData(String email)
         {
             return executeQuery("delete from [student] where [email]='" + email + "'");
+        }
+
+        public Boolean removeStudent(String id)
+        {
+            return executeQuery("delete from [student] where [id] = '" + id + "'");
         }
 
         public ArrayList getstudentData()

@@ -109,10 +109,12 @@ namespace Student_Management_System_By_Mehboob
             list = myData.getClassData();
             txtstudentaddclass.Items.Clear();
             txtclassurid.Items.Clear();
+            txtstudenturclass.Items.Clear();
             for (int i=0;i<list.Count;i++)
             {
                 txtstudentaddclass.Items.Add(((classClass)list[i]).name);
                 txtclassurid.Items.Add(((classClass)list[i]).id);
+                txtstudenturclass.Items.Add(((classClass)list[i]).name);
             }
         }
 
@@ -121,6 +123,18 @@ namespace Student_Management_System_By_Mehboob
             ArrayList list = new ArrayList();
             list = myData.getstudentData();
             showStudentData(list);
+            showstudentlist();
+        }
+
+        private void showstudentlist()
+        {
+            ArrayList list = new ArrayList();
+            list = myData.getstudentData();
+            txtstudenturid.Items.Clear();
+            for(int i=0;i<list.Count;i++)
+            {
+                txtstudenturid.Items.Add(((studentClass)list[i]).id);
+            }
         }
 
         private void showTeacherData(ArrayList list)
@@ -1174,6 +1188,156 @@ namespace Student_Management_System_By_Mehboob
                 showsubjectlist();
                 showStudent();
                 txtclassurname.Text = "";
+            }
+        }
+
+        private void tabPage12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtstudenturid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String id = txtstudenturid.Text;
+            ArrayList list = new ArrayList();
+            list = myData.getstudentData();
+            for(int i=0;i<list.Count;i++)
+            {
+                if(((studentClass)list[i]).id.ToString().Equals(txtstudenturid.Text))
+                {
+                    txtstudenturname.Text = ((studentClass)list[i]).name;
+                    txtstudenturfname.Text = ((studentClass)list[i]).fname;
+                    txtstudenturemail.Text = ((studentClass)list[i]).email;
+                    if(txtstudenturclass.Items.Contains(((studentClass)list[i]).cname))
+                    {
+                        txtstudenturclass.SelectedItem = ((studentClass)list[i]).cname;
+                    }
+                    else
+                    {
+                        showclasslist();
+                    }
+                }
+            }
+        }
+
+        private void btstudenturremove_Click(object sender, EventArgs e)
+        {
+            lblinfostudentur.Visible =
+                erstudenturid.Visible =
+                erstudenturname.Visible =
+                erstudenturfname.Visible =
+                erstudenturemail.Visible =
+                erstudenturclass.Visible = false;
+            if(txtstudenturid.Text==String.Empty)
+            {
+                lblinfostudentur.Text = "Please Select ID !!!";
+                lblinfostudentur.Visible =
+                    erstudenturid.Visible = true;
+                return;
+            }
+            if(!(myData.removeStudent(txtstudenturid.Text)))
+            {
+                lblinfostudentur.Text = "System Error !!!";
+                lblinfostudentur.Visible = true;
+                return;
+            }
+            else
+            {
+                lblinfostudentur.Text = "Data Removed Successfully !!!";
+                lblinfostudentur.Visible = true;
+                showStudent();
+                showclasslist();
+                txtstudenturname.Text = "";
+                txtstudenturfname.Text = "";
+                txtstudenturemail.Text = "";
+            }
+        }
+
+        private void btstudenturupdate_Click(object sender, EventArgs e)
+        {
+            Boolean b =
+                lblinfostudentur.Visible =
+                erstudenturid.Visible =
+                erstudenturname.Visible =
+                erstudenturfname.Visible =
+                erstudenturemail.Visible =
+                erstudenturclass.Visible = false;
+            if(txtstudenturid.Text==String.Empty)
+            {
+                lblinfostudentur.Text = "Please Select ID !!!";
+                lblinfostudentur.Visible =
+                    erstudenturid.Visible = true;
+                return;
+            }
+            if(txtstudenturname.Text==String.Empty)
+            {
+                lblinfostudentur.Text = "Data Error !!!";
+                lblinfostudentur.Visible =
+                    b =
+                    erstudenturname.Visible = true;
+            }
+            if(txtstudenturfname.Text==String.Empty)
+            {
+                lblinfostudentur.Text = "Data Error !!!";
+                b =
+                    lblinfostudentur.Visible =
+                    erstudenturfname.Visible = true;
+            }
+            if(txtstudenturemail.Text==String.Empty)
+            {
+                lblinfostudentur.Text = "Data Error !!!";
+                b =
+                    lblinfostudentur.Visible =
+                    erstudenturemail.Visible = true;
+            }
+            if(txtstudenturclass.Text==String.Empty)
+            {
+                lblinfostudentur.Text = "Data Error !!!";
+                b =
+                    lblinfostudentur.Visible =
+                    erstudenturclass.Visible = true;
+            }
+            if(b)
+            {
+                return;
+            }
+            ArrayList list = new ArrayList();
+            list = myData.getstudentData();
+            for(int i=0;i<list.Count;i++)
+            {
+                if(((studentClass)list[i]).name.ToLower().Equals(txtstudenturname.Text)
+                    &&
+                    ((studentClass)list[i]).fname.ToLower().Equals(txtstudenturfname.Text))
+                {
+                    lblinfostudentur.Text = "Student Name Already Exist !!!";
+                    lblinfostudentur.Visible =
+                        erstudenturfname.Visible=
+                        erstudenturname.Visible = true;
+                    return;
+                }
+                if(((studentClass)list[i]).email.Equals(txtstudenturemail.Text))
+                {
+                    lblinfostudentur.Text = "Email Already Exist !!!";
+                    lblinfostudentur.Visible =
+                        erstudenturemail.Visible = true;
+                }
+            }
+
+            if(!(myData.updateStudent(txtstudenturid.Text,txtstudenturname.Text,txtstudenturfname.Text,txtstudenturemail.Text,txtstudenturclass.Text)))
+            {
+                lblinfostudentur.Text = "System Error !!!";
+                lblinfostudentur.Visible = true;
+                return;
+            }
+            else
+            {
+                lblinfostudentur.Text = "Data Updated SuccessFully !!!";
+                lblinfostudentur.Visible = true;
+                showStudent();
+                showclasslist();
+                txtstudenturname.Text = "";
+                txtstudenturfname.Text = "";
+                txtstudenturemail.Text = "";
             }
         }
     }

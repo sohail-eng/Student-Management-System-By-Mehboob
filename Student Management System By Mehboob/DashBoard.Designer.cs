@@ -147,10 +147,30 @@ namespace Student_Management_System_By_Mehboob
             this.label33 = new System.Windows.Forms.Label();
             this.btclassurupdate = new System.Windows.Forms.Button();
             this.lblclassurhelp = new System.Windows.Forms.Label();
+            this.lblinfostudentur = new System.Windows.Forms.Label();
+            this.btstudenturremove = new System.Windows.Forms.Button();
+            this.txtstudenturclass = new System.Windows.Forms.ComboBox();
+            this.erstudenturemail = new System.Windows.Forms.Label();
+            this.txtstudenturemail = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.erstudenturfname = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.erstudenturclass = new System.Windows.Forms.Label();
+            this.txtstudenturfname = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.erstudenturname = new System.Windows.Forms.Label();
+            this.txtstudenturname = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtstudenturid = new System.Windows.Forms.ComboBox();
+            this.erstudenturid = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.btstudenturupdate = new System.Windows.Forms.Button();
+            this.lblstudenturhelp = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl5.SuspendLayout();
             this.tabPage11.SuspendLayout();
+            this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudent)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl4.SuspendLayout();
@@ -382,12 +402,32 @@ namespace Student_Management_System_By_Mehboob
             // tabPage12
             // 
             this.tabPage12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tabPage12.Controls.Add(this.lblstudenturhelp);
+            this.tabPage12.Controls.Add(this.btstudenturupdate);
+            this.tabPage12.Controls.Add(this.txtstudenturid);
+            this.tabPage12.Controls.Add(this.erstudenturid);
+            this.tabPage12.Controls.Add(this.label39);
+            this.tabPage12.Controls.Add(this.lblinfostudentur);
+            this.tabPage12.Controls.Add(this.btstudenturremove);
+            this.tabPage12.Controls.Add(this.txtstudenturclass);
+            this.tabPage12.Controls.Add(this.erstudenturemail);
+            this.tabPage12.Controls.Add(this.txtstudenturemail);
+            this.tabPage12.Controls.Add(this.label16);
+            this.tabPage12.Controls.Add(this.erstudenturfname);
+            this.tabPage12.Controls.Add(this.label32);
+            this.tabPage12.Controls.Add(this.erstudenturclass);
+            this.tabPage12.Controls.Add(this.txtstudenturfname);
+            this.tabPage12.Controls.Add(this.label35);
+            this.tabPage12.Controls.Add(this.erstudenturname);
+            this.tabPage12.Controls.Add(this.txtstudenturname);
+            this.tabPage12.Controls.Add(this.label37);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage12.Size = new System.Drawing.Size(665, 122);
             this.tabPage12.TabIndex = 1;
-            this.tabPage12.Text = "tabPage12";
+            this.tabPage12.Text = "Update / Remove Student";
+            this.tabPage12.Click += new System.EventHandler(this.tabPage12_Click);
             // 
             // dataGridViewStudent
             // 
@@ -1458,6 +1498,191 @@ namespace Student_Management_System_By_Mehboob
             this.lblclassurhelp.Text = "label4";
             this.lblclassurhelp.Visible = false;
             // 
+            // lblinfostudentur
+            // 
+            this.lblinfostudentur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblinfostudentur.Location = new System.Drawing.Point(273, 70);
+            this.lblinfostudentur.Name = "lblinfostudentur";
+            this.lblinfostudentur.Size = new System.Drawing.Size(294, 43);
+            this.lblinfostudentur.TabIndex = 49;
+            this.lblinfostudentur.Text = "Information";
+            this.lblinfostudentur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblinfostudentur.Visible = false;
+            // 
+            // btstudenturremove
+            // 
+            this.btstudenturremove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btstudenturremove.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btstudenturremove.Location = new System.Drawing.Point(157, 70);
+            this.btstudenturremove.Name = "btstudenturremove";
+            this.btstudenturremove.Size = new System.Drawing.Size(110, 43);
+            this.btstudenturremove.TabIndex = 48;
+            this.btstudenturremove.Text = "Remove";
+            this.btstudenturremove.UseVisualStyleBackColor = false;
+            this.btstudenturremove.Click += new System.EventHandler(this.btstudenturremove_Click);
+            // 
+            // txtstudenturclass
+            // 
+            this.txtstudenturclass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtstudenturclass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstudenturclass.FormattingEnabled = true;
+            this.txtstudenturclass.Location = new System.Drawing.Point(535, 31);
+            this.txtstudenturclass.Name = "txtstudenturclass";
+            this.txtstudenturclass.Size = new System.Drawing.Size(124, 26);
+            this.txtstudenturclass.TabIndex = 47;
+            // 
+            // erstudenturemail
+            // 
+            this.erstudenturemail.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.erstudenturemail.Location = new System.Drawing.Point(467, 7);
+            this.erstudenturemail.Name = "erstudenturemail";
+            this.erstudenturemail.Size = new System.Drawing.Size(15, 23);
+            this.erstudenturemail.TabIndex = 46;
+            this.erstudenturemail.Visible = false;
+            // 
+            // txtstudenturemail
+            // 
+            this.txtstudenturemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstudenturemail.Location = new System.Drawing.Point(387, 35);
+            this.txtstudenturemail.Name = "txtstudenturemail";
+            this.txtstudenturemail.Size = new System.Drawing.Size(142, 24);
+            this.txtstudenturemail.TabIndex = 45;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(413, 11);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(50, 18);
+            this.label16.TabIndex = 44;
+            this.label16.Text = "E-Mail";
+            // 
+            // erstudenturfname
+            // 
+            this.erstudenturfname.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.erstudenturfname.Location = new System.Drawing.Point(368, 6);
+            this.erstudenturfname.Name = "erstudenturfname";
+            this.erstudenturfname.Size = new System.Drawing.Size(10, 23);
+            this.erstudenturfname.TabIndex = 43;
+            this.erstudenturfname.Visible = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(556, 9);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(46, 18);
+            this.label32.TabIndex = 42;
+            this.label32.Text = "Class";
+            // 
+            // erstudenturclass
+            // 
+            this.erstudenturclass.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.erstudenturclass.Location = new System.Drawing.Point(608, 5);
+            this.erstudenturclass.Name = "erstudenturclass";
+            this.erstudenturclass.Size = new System.Drawing.Size(15, 23);
+            this.erstudenturclass.TabIndex = 41;
+            this.erstudenturclass.Visible = false;
+            // 
+            // txtstudenturfname
+            // 
+            this.txtstudenturfname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstudenturfname.Location = new System.Drawing.Point(250, 35);
+            this.txtstudenturfname.Name = "txtstudenturfname";
+            this.txtstudenturfname.Size = new System.Drawing.Size(131, 24);
+            this.txtstudenturfname.TabIndex = 40;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(263, 10);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(94, 18);
+            this.label35.TabIndex = 39;
+            this.label35.Text = "Father Name";
+            // 
+            // erstudenturname
+            // 
+            this.erstudenturname.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.erstudenturname.Location = new System.Drawing.Point(181, 5);
+            this.erstudenturname.Name = "erstudenturname";
+            this.erstudenturname.Size = new System.Drawing.Size(15, 23);
+            this.erstudenturname.TabIndex = 38;
+            this.erstudenturname.Visible = false;
+            // 
+            // txtstudenturname
+            // 
+            this.txtstudenturname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstudenturname.Location = new System.Drawing.Point(94, 35);
+            this.txtstudenturname.Name = "txtstudenturname";
+            this.txtstudenturname.Size = new System.Drawing.Size(150, 24);
+            this.txtstudenturname.TabIndex = 37;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(127, 9);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(48, 18);
+            this.label37.TabIndex = 36;
+            this.label37.Text = "Name";
+            // 
+            // txtstudenturid
+            // 
+            this.txtstudenturid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtstudenturid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstudenturid.FormattingEnabled = true;
+            this.txtstudenturid.Location = new System.Drawing.Point(3, 33);
+            this.txtstudenturid.Name = "txtstudenturid";
+            this.txtstudenturid.Size = new System.Drawing.Size(85, 26);
+            this.txtstudenturid.TabIndex = 58;
+            this.txtstudenturid.SelectedIndexChanged += new System.EventHandler(this.txtstudenturid_SelectedIndexChanged);
+            // 
+            // erstudenturid
+            // 
+            this.erstudenturid.Image = global::Student_Management_System_By_Mehboob.Properties.Resources.rsz_1rsz_clipart7178;
+            this.erstudenturid.Location = new System.Drawing.Point(73, 7);
+            this.erstudenturid.Name = "erstudenturid";
+            this.erstudenturid.Size = new System.Drawing.Size(15, 23);
+            this.erstudenturid.TabIndex = 57;
+            this.erstudenturid.Visible = false;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(6, 9);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(67, 18);
+            this.label39.TabIndex = 56;
+            this.label39.Text = "Select ID";
+            // 
+            // btstudenturupdate
+            // 
+            this.btstudenturupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btstudenturupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btstudenturupdate.Location = new System.Drawing.Point(46, 70);
+            this.btstudenturupdate.Name = "btstudenturupdate";
+            this.btstudenturupdate.Size = new System.Drawing.Size(105, 43);
+            this.btstudenturupdate.TabIndex = 59;
+            this.btstudenturupdate.Text = "Update";
+            this.btstudenturupdate.UseVisualStyleBackColor = false;
+            this.btstudenturupdate.Click += new System.EventHandler(this.btstudenturupdate_Click);
+            // 
+            // lblstudenturhelp
+            // 
+            this.lblstudenturhelp.AutoSize = true;
+            this.lblstudenturhelp.Location = new System.Drawing.Point(140, 106);
+            this.lblstudenturhelp.Name = "lblstudenturhelp";
+            this.lblstudenturhelp.Size = new System.Drawing.Size(35, 13);
+            this.lblstudenturhelp.TabIndex = 60;
+            this.lblstudenturhelp.Text = "label4";
+            this.lblstudenturhelp.Visible = false;
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1478,6 +1703,8 @@ namespace Student_Management_System_By_Mehboob
             this.tabControl5.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudent)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
@@ -1624,5 +1851,24 @@ namespace Student_Management_System_By_Mehboob
         private System.Windows.Forms.TextBox txtclassurname;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label lblclassurhelp;
+        private System.Windows.Forms.Label lblinfostudentur;
+        private System.Windows.Forms.Button btstudenturremove;
+        private System.Windows.Forms.ComboBox txtstudenturclass;
+        private System.Windows.Forms.Label erstudenturemail;
+        private System.Windows.Forms.TextBox txtstudenturemail;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label erstudenturfname;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label erstudenturclass;
+        private System.Windows.Forms.TextBox txtstudenturfname;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label erstudenturname;
+        private System.Windows.Forms.TextBox txtstudenturname;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button btstudenturupdate;
+        private System.Windows.Forms.ComboBox txtstudenturid;
+        private System.Windows.Forms.Label erstudenturid;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label lblstudenturhelp;
     }
 }
