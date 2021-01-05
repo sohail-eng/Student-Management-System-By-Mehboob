@@ -163,6 +163,11 @@ namespace Student_Management_System_By_Mehboob
             return executeQuery("update [subject] set [teacher_Name]='"+newTeachername+"' where [teacher_Name]='"+teacherName+"'");
         }
 
+        public Boolean updateSubject(String id,String name,String teachername)
+        {
+            return executeQuery("update [subject] set [name]='" + name + "',[teacher_Name]='" + teachername + "' where [id]='" + id + "'");
+        }
+
         public Boolean updateSubjectteacher(String oldname,String name)
         {
             return executeQuery("update [subject] set [teacher_Name]='"+oldname+"' where [teacher_Name]='" + name + "'");
@@ -176,6 +181,11 @@ namespace Student_Management_System_By_Mehboob
         public Boolean removeSubjectDataTeacherName(String teacherName)
         {
             return executeQuery("delete from [subject] where [teacher_Name]='" + teacherName + "'");
+        }
+
+        public Boolean removeSubject(String id)
+        {
+            return executeQuery("delete from [subject] where id='"+id+"'");
         }
 
         public ArrayList getSubjectData()
@@ -219,6 +229,40 @@ namespace Student_Management_System_By_Mehboob
         public Boolean updateClassName(String newname,String name)
         {
             return executeQuery("update [class] set [name]='" + newname + "' where [name]='" + name + "'");
+        }
+
+        public Boolean updateclasssubjectname(String newname,String oldname)
+        {
+            sb1(newname, oldname);
+            sb2(newname, oldname);
+            sb3(newname, oldname);
+            sb4(newname, oldname);
+            return sb5(newname, oldname);
+        }
+
+        private Boolean sb1(String newname,String oldname)
+        {
+            return executeQuery("update [class] set [subject1]='"+newname+"' where [subject1]='"+oldname+"'");
+        }
+
+        private Boolean sb2(String newname,String oldname)
+        {
+            return executeQuery("update [class] set [subject2]='" + newname + "' where [subject2]='" + oldname + "'");
+        }
+
+        private Boolean sb3(String newname, String oldname)
+        {
+            return executeQuery("update [class] set [subject3]='" + newname + "' where [subject3]='" + oldname + "'");
+        }
+
+        private Boolean sb4(String newname, String oldname)
+        {
+            return executeQuery("update [class] set [subject4]='" + newname + "' where [subject4]='" + oldname + "'");
+        }
+
+        private Boolean sb5(String newname, String oldname)
+        {
+            return executeQuery("update [class] set [subject5]='" + newname + "' where [subject5]='" + oldname + "'");
         }
 
         public Boolean removeClassData(String name)

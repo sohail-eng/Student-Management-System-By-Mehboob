@@ -51,11 +51,13 @@ namespace Student_Management_System_By_Mehboob
             ArrayList list = new ArrayList();
             list = myData.getTeacherData();
             txtsbtsnameadd.Items.Clear();
+            txtsubjecturteacher.Items.Clear();
             txtteacherurid.Items.Clear();
             for (int i = 0; i < list.Count; i++)
             {
                 txtsbtsnameadd.Items.Add(((teacherClass)list[i]).name);
                 txtteacherurid.Items.Add(((teacherClass)list[i]).id);
+                txtsubjecturteacher.Items.Add(((teacherClass)list[i]).name);
             }
         }
 
@@ -76,6 +78,7 @@ namespace Student_Management_System_By_Mehboob
             txtclasssb3add.Items.Clear();
             txtclasssb4add.Items.Clear();
             txtclasssb5add.Items.Clear();
+            txtsubjecturid.Items.Clear();
             for (int i = 0; i < list.Count; i++)
             {
                 txtclasssb1add.Items.Add(((subjectClass)list[i]).name);
@@ -83,6 +86,7 @@ namespace Student_Management_System_By_Mehboob
                 txtclasssb3add.Items.Add(((subjectClass)list[i]).name);
                 txtclasssb4add.Items.Add(((subjectClass)list[i]).name);
                 txtclasssb5add.Items.Add(((subjectClass)list[i]).name);
+                txtsubjecturid.Items.Add(((subjectClass)list[i]).id);
             }
         }
 
@@ -673,6 +677,20 @@ namespace Student_Management_System_By_Mehboob
                 return;
             }
             ArrayList list = new ArrayList();
+            list = myData.getTeacherData();
+            for(int i=0;i<list.Count;i++)
+            {
+                if(!(((teacherClass)list[i]).id.ToString().Equals(txtteacherurid.Text)))
+                {
+                    if(((teacherClass)list[i]).name.ToLower().Equals(txtteacherurname.Text.ToLower()))
+                    {
+                        lblinfoteacherur.Text = "Name Already Exist !!!";
+                        lblinfoteacherur.Visible = true;
+                        erteacherurname.Visible = true;
+                        return;
+                    }
+                }
+            }
             String id = txtteacherurid.Text;
             String name = txtteacherurname.Text;
             if (!(myData.updateSubjectteacher(name, lblteacherurhelp.Text)))
@@ -690,6 +708,127 @@ namespace Student_Management_System_By_Mehboob
                     txtteacheruremail.Text = "";
                 showteacher();
                 showsubject();
+            }
+        }
+
+        private void txtsubjecturid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String id = txtsubjecturid.Text;
+            ArrayList list = new ArrayList();
+            list = myData.getSubjectData();
+            for(int i=0;i<list.Count;i++)
+            {
+                if(((subjectClass)list[i]).id.ToString().Equals(id))
+                {
+                    txtsubjecturname.Text = ((subjectClass)list[i]).name;
+                    lblsubjecturhelp.Text = ((subjectClass)list[i]).name;
+                    if(txtsubjecturteacher.Items.Contains(((subjectClass)list[i]).teacher_name))
+                    {
+                        txtsubjecturteacher.SelectedItem = ((subjectClass)list[i]).teacher_name;
+                    }
+                    else
+                    {
+                        showteacherlist();
+                    }
+                }
+            }
+        }
+
+        private void btsubjecturremove_Click(object sender, EventArgs e)
+        {
+                ersubjecturid.Visible =
+                ersubjecturname.Visible =
+                ersubjecturteacher.Visible =
+                lblinfosubjectur.Visible = false;
+            if(txtsubjecturid.Text==String.Empty)
+            {
+                lblinfosubjectur.Text = "Please Select ID !!!";
+                lblinfosubjectur.Visible = 
+                ersubjecturid.Visible = true;
+                return;
+            }
+            if(!(myData.removeSubject(txtsubjecturid.Text)))
+            {
+                lblinfosubjectur.Text = "System Error !!!";
+                lblinfosubjectur.Visible = true;
+                return;
+            }
+            else
+            {
+                myData.updateclasssubjectname("", lblsubjecturhelp.Text);
+                lblinfosubjectur.Text = "Data Removed Successfully !!!";
+                lblinfosubjectur.Visible = true;
+                showsubject();
+                showteacherlist();
+                showClass();
+                txtsubjecturname.Text = "";
+            }
+        }
+
+        private void btsubjecturupdate_Click(object sender, EventArgs e)
+        {
+            Boolean b =
+                lblinfosubjectur.Visible =
+                ersubjecturid.Visible =
+                ersubjecturname.Visible =
+                ersubjecturteacher.Visible = false;
+            if(txtsubjecturid.Text==String.Empty)
+            {
+                lblinfosubjectur.Text = "Please Select ID !!!";
+                lblinfosubjectur.Visible =
+                    ersubjecturid.Visible = true;
+                return;
+            }
+            if(txtsubjecturname.Text==String.Empty)
+            {
+                lblinfosubjectur.Text = "Data Error !!!";
+                lblinfosubjectur.Visible =
+                    ersubjecturname.Visible =
+                    b = true;
+            }
+            if(txtsubjecturteacher.Text==String.Empty)
+            {
+                lblinfosubjectur.Text = "Data Error !!!";
+                b =
+                    lblinfosubjectur.Visible =
+                    ersubjecturteacher.Visible = true;
+            }
+            if(b)
+            {
+                return;
+            }
+
+            ArrayList list = new ArrayList();
+            list = myData.getSubjectData();
+            for(int i=0;i<list.Count;i++)
+            {
+                if(!(((subjectClass)list[i]).id.ToString().Equals(txtsubjecturid.Text)))
+                {
+                    if (((subjectClass)list[i]).name.ToLower().Equals(txtsubjecturname.Text.ToLower()))
+                    {
+                        lblinfosubjectur.Text = "Class Name Already Exist !!!";
+                        lblinfosubjectur.Visible = true;
+                        ersubjecturname.Visible = true;
+                        return;
+                    }
+                }
+            }
+
+            if(!(myData.updateSubject(txtsubjecturid.Text,txtsubjecturname.Text,txtsubjecturteacher.Text)))
+            {
+                lblinfosubjectur.Text = "System Error !!!";
+                lblinfosubjectur.Visible = true;
+                return;
+            }
+            else
+            {
+                myData.updateclasssubjectname(txtsubjecturname.Text, lblsubjecturhelp.Text);
+                lblinfosubjectur.Text = "Data Updated Successfully !!!";
+                lblinfosubjectur.Visible = true;
+                showsubject();
+                showteacherlist();
+                showClass();
+                txtsubjecturname.Text = "";
             }
         }
     }
